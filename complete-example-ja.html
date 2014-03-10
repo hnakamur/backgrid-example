@@ -19,7 +19,7 @@
 <script src="js/backgrid-select-all.js"></script>
 <script src="js/backgrid-paginator.js"></script>
 <script src="js/backgrid-filter.js"></script>
-<script src="js/jquery.japanese-input-change.js"></script>
+<script src="js/backbone-japanese-input-handler-mixin.js"></script>
 <script>
 $(function() {
 
@@ -92,6 +92,7 @@ $example2.after(paginator.render().el);
 
 // Initialize a client-side filter to filter on the client
 // mode pageable collection's cache.
+BackboneJapaneseInputHandlerMixin.call(Backgrid.Extension.ClientSideFilter.prototype);
 var filter = new Backgrid.Extension.ClientSideFilter({
   collection: pageableTerritories,
   fields: ['name']
